@@ -35,7 +35,9 @@ class LoginView(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/report/search')
+                res = HttpResponseRedirect('/success')
+                res.set_cookie('username', username, 604800)
+                return res
             else:
                 self.error = '账户被冻结'
         else:
@@ -45,5 +47,13 @@ class LoginView(View):
 
 @login_required
 def logout(request):
+
+    res = HttpResponseRedirect('/login')
+    res.delete_cookie('username')
+    res.delete_cookie('sessionid')
     auth_logout(request)
-    return render(request, 'login.html')
+    return res
+
+
+def success(request):
+    return render(request, 'success.html', {})
