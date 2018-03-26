@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'butt_server.urls'
+ROOT_URLCONF = 'admin.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'butt_server.wsgi.application'
+WSGI_APPLICATION = 'admin.wsgi.application'
 
 
 # Database
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'butt_server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'butt_server',
+        'NAME': 'web_fanfan',
         'USER': 'root',
         'PASSWORD': 'mysql',
         'HOST': '127.0.0.1',
