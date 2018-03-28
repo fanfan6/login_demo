@@ -6,6 +6,8 @@
 </head>
 <body>
     <h1>普通用户平台</h1>
+    {% if perms.dashdoard.view_server %}
     <a href="/auth_test/manager">管理员页面</a>
+    {% endif %}
 </body>
 </html>

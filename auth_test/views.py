@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import permission_required
 # Create your views here.
 
 
-@permission_required('dashdoard.view_server', login_url="/success")
+# @permission_required('dashdoard.view_server', login_url="/success")
+@permission_required('polls.can_vote', login_url="/success")
 def manager(request):
     return render(request, 'manager.html', {})
 
