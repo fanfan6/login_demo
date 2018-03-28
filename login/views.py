@@ -35,7 +35,7 @@ class LoginView(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                res = HttpResponseRedirect('/success')
+                res = HttpResponseRedirect('/auth_test/general')
                 res.set_cookie('username', username, 604800)
                 return res
             else:
